@@ -16,6 +16,7 @@ router.get("/", async(res, req) => {
     console.error(error.message);
     res.status(500).send("Server Error");
   }
+<<<<<<< HEAD
 })
 
  /**
@@ -35,3 +36,7 @@ router.get("/:rank", async(res,req) =>{
         res.status(500).send("Server Error");
     }
 })
+=======
+});
+
+>>>>>>> 8dd451ca86d13e902fc2567d0acc266dd8b467df
