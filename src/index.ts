@@ -9,8 +9,10 @@ connectDB();
 
 app.use(express.json());
 
+console.log("1")
 app.use("/api/list", require("./api/list"));
 
+console.log("2")
 // error handler
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
@@ -23,7 +25,7 @@ app.use(function (err, req, res, next) {
 });
 
 app
-  .listen(5000, () => {
+  .listen(8000, () => {
     console.log(`
     ################################################
     🛡️  Server listening on port: 5000 🛡️

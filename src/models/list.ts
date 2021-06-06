@@ -1,9 +1,8 @@
 import mongoose from "mongoose";
 
 const ProductSchema = new mongoose.Schema({
-    product : [
-        {
-          rank: {
+    
+        rank: {
             type: Number,
           },
           brandLabel: {
@@ -18,8 +17,8 @@ const ProductSchema = new mongoose.Schema({
           reviewLabel : {
             type: String,
           },
-        },
-      ],
+        
+    
 });
 
 export default mongoose.model<mongoose.Document>("Product", ProductSchema);

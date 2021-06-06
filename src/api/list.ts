@@ -8,15 +8,17 @@ const router = express.Router();
  * @access Public
  */
 
-router.get("/", async(res, req) => {
+router.get("/", async(req, res) => {
   try{
-    const product = await Product.find()
-    res.json(product);
+    console.log("dd")
+    const products = await Product.find();
+    // const list = await Product.findById(product[0]._id);
+   // const response = { list}
+    res.json(products);
   } catch(error) {
     console.error(error.message);
     res.status(500).send("Server Error");
   }
-<<<<<<< HEAD
 })
 
  /**
@@ -25,18 +27,18 @@ router.get("/", async(res, req) => {
  * @access Public
  */
 
-router.get("/:rank", async(res,req) =>{
+router.get("/:rank", async(req,res) =>{
     try{
+        
         const product = await Product.findOne({
-            user: req.params.rank,
+          rank: req.params.rank,
         });
         if (!product) return res.status(400).json({ msg: "product not found" });
+        res.json(product);
     } catch(error){
         console.error(error.message);
         res.status(500).send("Server Error");
     }
 })
-=======
-});
 
->>>>>>> 8dd451ca86d13e902fc2567d0acc266dd8b467df
+module.exports = router;
